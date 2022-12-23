@@ -1,6 +1,4 @@
-# CVs Conformational Polymorphism
-
-##Oren Elishav, Roy Podgaetsky, Olga Meikler, and Barak Hirshberg
+# CVs Conformational Polymorphism  ##Oren Elishav, Roy Podgaetsky, Olga Meikler, and Barak Hirshberg
 
 [![arXiv](http://img.shields.io/badge/arXiv-2211.07746-B31B1B.svg)](https://arxiv.org/abs/2211.07746)
 
