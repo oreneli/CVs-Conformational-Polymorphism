@@ -40,54 +40,6 @@ t5_3: MATHEVAL ARG=_t5_3 FUNC=(-1)*x PERIODIC=NO
 _t6_3: TORSION ATOMS=117,115,121,118
 t6_3: MATHEVAL ARG=_t6_3 FUNC=(-1)*x PERIODIC=NO
 
-th1: CUSTOM ...
-
-	ARG=t1_0,t1_1,t1_2,t1_3
-	VAR=t1_0,t1_1,t1_2,t1_3
-	FUNC=(t1_0+t1_1+t1_2+t1_3)/4
-	PERIODIC=NO
-...
-
-th2: CUSTOM ...
-
-	ARG=t2_0,t2_1,t2_2,t2_3
-	VAR=t2_0,t2_1,t2_2,t2_3
-	FUNC=(t2_0+t2_1+t2_2+t2_3)/4
-	PERIODIC=NO
-...
-
-th3: CUSTOM ...
-
-	ARG=t3_0,t3_1,t3_2,t3_3
-	VAR=t3_0,t3_1,t3_2,t3_3
-	FUNC=(t3_0+t3_1+t3_2+t3_3)/4
-	PERIODIC=NO
-...
-
-th4: CUSTOM ...
-
-	ARG=t4_0,t4_1,t4_2,t4_3
-	VAR=t4_0,t4_1,t4_2,t4_3
-	FUNC=(t4_0+t4_1+t4_2+t4_3)/4
-	PERIODIC=NO
-...
-
-th5: CUSTOM ...
-
-	ARG=t5_0,t5_1,t5_2,t5_3
-	VAR=t5_0,t5_1,t5_2,t5_3
-	FUNC=(t5_0+t5_1+t5_2+t5_3)/4
-	PERIODIC=NO
-...
-
-th6: CUSTOM ...
-
-	ARG=t6_0,t6_1,t6_2,t6_3
-	VAR=t6_0,t6_1,t6_2,t6_3
-	FUNC=(t6_0+t6_1+t6_2+t6_3)/4
-	PERIODIC=NO
-...
-
 cos_01: CUSTOM ...
 
         ARG=t1_0
@@ -457,8 +409,6 @@ gamma: CUSTOM ...
    FUNC=acos((ax*bx+ay*by+az*bz)/sqrt((ax*ax+ay*ay+az*az)*(bx*bx+by*by+bz*bz)))
    PERIODIC=NO
 ...
-
-# restraint: RESTRAINT ARG=t2_0,t3_0,t5_0,t2_1,t3_1,t5_1,t2_2,t3_2,t5_2,t2_3,t3_3,t5_3 AT=0.356276,-0.324913,0.426662,0.356276,-0.324913,0.426662,0.356276,-0.324913,0.426662,0.356276,-0.324913,0.426662 KAPPA=35,35,35,35,35,35,35,35,35,35,35,35
 
 uwall: UPPER_WALLS ARG=t2_0,t3_0,t5_0,t2_1,t3_1,t5_1,t2_2,t3_2,t5_2,t2_3,t3_3,t5_3 AT=0.38,-0.26,0.445,0.38,-0.26,0.445,0.38,-0.26,0.445,0.38,-0.26,0.445 KAPPA=35,35,35,35,35,35,35,35,35,35,35,35
 lwall: LOWER_WALLS ARG=t2_0,t3_0,t5_0,t2_1,t3_1,t5_1,t2_2,t3_2,t5_2,t2_3,t3_3,t5_3 AT=0.27,-0.515,0.36,0.27,-0.515,0.36,0.27,-0.515,0.36,0.27,-0.515,0.36 KAPPA=35,35,35,35,35,35,35,35,35,35,35,35
