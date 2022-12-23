@@ -1,0 +1,40 @@
+# epsilon-CL20 NPT 300 K with SB-CL20 FF
+
+units		real
+atom_style	full
+boundary	p p p		#periodic
+
+# ----------------------- ATOMS DEFINITION ---------------------------
+box tilt large
+read_data	epsilon_data.data
+
+
+# ------------------------ FORCE FIELDS ------------------------------
+include		forcefield.SB_CL20_CCNN_DSF
+
+neighbor	1.0 bin
+neigh_modify	delay 0 check yes
+
+# ------------------------- SETTINGS ---------------------------------
+dump		myDump all xyz 1000 epsilon.xyz
+dump_modify	myDump element C N N O H
+
+# ------------------------- SIMULATION -------------------------------
+thermo 1000
+thermo_style custom step cpu cella cellb cellc cellalpha cellbeta cellgamma density vol temp press ke pe etotal
+
+velocity       all create 50.0 4928459 rot yes mom yes dist gaussian
+
+fix             0 all plumed plumedfile plumed.dat outfile out.log
+
+min_style       cg
+minimize        0.0 1.0e-8 10000 20000
+
+fix     ensemble all nvt temp 50 50 100
+run     100000
+unfix   ensemble
+
+fix	ensemble all npt temp 50 50 10.0 tri 1.0 1.0 100.0
+run	1000000
+unfix	ensemble
+

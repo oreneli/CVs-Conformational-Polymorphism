@@ -1,0 +1,58 @@
+UNITS LENGTH=A TIME=fs ENERGY=kcal/mol
+
+t1: TORSION ATOMS=33,1,31,34
+t2: TORSION ATOMS=15,19,13,16
+t3: TORSION ATOMS=27,25,31,28
+t4: TORSION ATOMS=21,19,25,22
+t5: TORSION ATOMS=3,1,7,4
+t6: TORSION ATOMS=9,7,13,10
+
+cos1: CUSTOM ...
+
+        ARG=t1
+        VAR=t1_0
+        FUNC=cos(t1_0-1.2)
+        PERIODIC=NO
+...
+
+cos2: CUSTOM ...
+
+        ARG=t2
+        VAR=t2_0
+        FUNC=cos(t2_0-1.2)
+        PERIODIC=NO
+...
+
+cos3: CUSTOM ...
+
+        ARG=t3
+        VAR=t3_0
+        FUNC=cos(t3_0-1.2)
+        PERIODIC=NO
+...
+
+cos4: CUSTOM ...
+
+        ARG=t4
+        VAR=t4_0
+        FUNC=cos(t4_0-1.2)
+        PERIODIC=NO
+...
+
+cos5: CUSTOM ...
+
+        ARG=t5
+        VAR=t5_0
+        FUNC=cos(t5_0-1.2)
+        PERIODIC=NO
+...
+
+cos6: CUSTOM ...
+
+        ARG=t6
+        VAR=t6_0
+        FUNC=cos(t6_0-1.2)
+        PERIODIC=NO
+...
+
+PRINT ARG=* FILE=COLVAR STRIDE=1000

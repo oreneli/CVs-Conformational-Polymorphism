@@ -1,0 +1,73 @@
+# Transfer to CL20 of Smith & Bharadwaj FF for HMX - 2019 - X. Bidault & S. Chaudhuri - Civil & Materials Engineering - University of Illinois at Chicago (UIC)
+
+mass 1 12.01100   # C
+mass 2 14.00720   # N : ring or amine nitrogen
+mass 3 14.00720   # N : nitro group nitrogen
+mass 4 15.99943   # O
+mass 5  1.00800   # H
+
+set type	1 charge -0.2160	#Original SB for HMX with qC/2
+set type	2 charge  0.0451
+set type	3 charge  0.6885
+set type	4 charge -0.3668
+set type	5 charge  0.2160
+
+#set type	1 charge -0.270000	#Bedrov with qC/2
+#set type	2 charge  0.056375
+#set type	3 charge  0.860625
+#set type	4 charge -0.458500
+#set type	5 charge  0.270000
+
+bond_style	harmonic
+angle_style	harmonic
+dihedral_style	harmonic
+improper_style	harmonic
+pair_style	hybrid/overlay buck 8.0 coul/dsf 0.25 10.0
+
+pair_coeff 1 1 buck 14976.00 0.323625 640.80
+pair_coeff 1 2 buck 30183.57 0.291121 566.03
+pair_coeff 1 3 buck 30183.57 0.291121 566.03
+pair_coeff 1 4 buck 33702.40 0.279642 505.60
+pair_coeff 1 5 buck 4320.000 0.292826 138.2
+pair_coeff 2 2 buck 60833.90 0.264550 500.00
+pair_coeff 2 3 buck 60833.90 0.264550 500.00
+pair_coeff 2 4 buck 67925.95 0.255037 446.60
+pair_coeff 2 5 buck 12695.88 0.265957 116.96
+pair_coeff 3 3 buck 60833.90 0.264550 500.00
+pair_coeff 3 4 buck 67925.95 0.255037 446.60
+pair_coeff 3 5 buck 12695.88 0.265957 116.96
+pair_coeff 4 4 buck 75844.80 0.246124 398.90
+pair_coeff 4 5 buck 14175.97 0.256345 104.46
+pair_coeff 5 5 buck 2649.700 0.267380 27.400
+pair_coeff * * coul/dsf
+
+bond_coeff 1 995.05 1.23
+bond_coeff 2 495.85 1.36
+bond_coeff 3 336.05 1.44
+bond_coeff 4 320.80 1.09
+bond_coeff 5 268.00 1.53 # from OPLS-AA
+
+angle_coeff 1 62.5 120.917
+angle_coeff 2 62.5 107.453
+angle_coeff 3 65.0  95.816
+angle_coeff 4 35.0 105.596 # CNC extented to CCN
+angle_coeff 5 43.2 107.453
+angle_coeff 6 38.5 108.507 # no HCH in CL20
+angle_coeff 7 35.0 110.518
+angle_coeff 8 37.5 110.700 # from OPLS-AA (mean CCH in CL20 = 111.867)
+
+dihedral_coeff  1  4.225 -1 2
+dihedral_coeff  2  0.395 -1 4
+dihedral_coeff  3  0.002 -1 8
+dihedral_coeff  4 -0.080 -1 3
+dihedral_coeff  5  1.650 -1 1
+dihedral_coeff  6 -0.805 -1 2
+dihedral_coeff  7  0.055 -1 3
+dihedral_coeff  8  4.468  1 1 # CCNN
+dihedral_coeff  9 -1.936 -1 2 # CCNN
+dihedral_coeff 10  0.868  1 3 # CCNN
+
+improper_coeff 1 4.000 0.0
+improper_coeff 2 44.65 0.0
+
+special_bonds lj/coul 0.0 0.0 1.0 #allowing all topo 1-4 coul/lj
