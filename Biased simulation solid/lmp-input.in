@@ -1,0 +1,25 @@
+units		real
+atom_style	full
+boundary	p p p		#periodic
+
+# ----------------------- ATOMS DEFINITION ---------------------------
+box tilt large
+read_restart	start_eps
+
+# ------------------------ FORCE FIELDS ------------------------------
+include		forcefield.SB_CL20_CCNN_DSF
+neighbor	1.0 bin
+neigh_modify	delay 0 check yes
+
+# ------------------------- SIMULATION -------------------------------
+thermo 10000
+thermo_style custom step cella cellb cellc cellalpha cellbeta cellgamma density vol temp press ke pe etotal
+
+dump            myDump all xtc 10000 epsilon.xtc
+
+fix     	0 all plumed plumedfile plumed.dat outfile out.log
+
+fix	ensemble all npt temp 300 300 10.0 tri 1.0 1.0 100.0 
+
+run	500000000
+unfix	ensemble

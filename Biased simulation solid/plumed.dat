@@ -1,0 +1,474 @@
+UNITS LENGTH=A TIME=fs ENERGY=kcal/mol
+
+WHOLEMOLECULES ENTITY0=1-36 ENTITY1=37-72 ENTITY2=73-108 ENTITY3=109-144
+DUMPATOMS FILE=dump.xyz ATOMS=1-36,37-72,73-108,109-144 STRIDE=10000
+
+t1_0: TORSION ATOMS=33,1,31,34
+t2_0: TORSION ATOMS=15,19,13,16
+t3_0: TORSION ATOMS=27,25,31,28
+t4_0: TORSION ATOMS=21,19,25,22
+t5_0: TORSION ATOMS=3,1,7,4
+t6_0: TORSION ATOMS=9,7,13,10
+t1_1: TORSION ATOMS=69,37,67,70
+t2_1: TORSION ATOMS=51,55,49,52
+t3_1: TORSION ATOMS=63,61,67,64
+t4_1: TORSION ATOMS=57,55,61,58
+t5_1: TORSION ATOMS=39,37,43,40
+t6_1: TORSION ATOMS=45,43,49,46
+_t1_2: TORSION ATOMS=105,73,103,106
+t1_2: MATHEVAL ARG=_t1_2 FUNC=(-1)*x PERIODIC=NO
+_t2_2: TORSION ATOMS=87,91,85,88
+t2_2: MATHEVAL ARG=_t2_2 FUNC=(-1)*x PERIODIC=NO
+_t3_2: TORSION ATOMS=99,97,103,100
+t3_2: MATHEVAL ARG=_t3_2 FUNC=(-1)*x PERIODIC=NO
+_t4_2: TORSION ATOMS=93,91,97,94
+t4_2: MATHEVAL ARG=_t4_2 FUNC=(-1)*x PERIODIC=NO
+_t5_2: TORSION ATOMS=75,73,79,76
+t5_2: MATHEVAL ARG=_t5_2 FUNC=(-1)*x PERIODIC=NO
+_t6_2: TORSION ATOMS=81,79,85,82
+t6_2: MATHEVAL ARG=_t6_2 FUNC=(-1)*x PERIODIC=NO
+_t1_3: TORSION ATOMS=141,109,139,142
+t1_3: MATHEVAL ARG=_t1_3 FUNC=(-1)*x PERIODIC=NO
+_t2_3: TORSION ATOMS=123,127,121,124
+t2_3: MATHEVAL ARG=_t2_3 FUNC=(-1)*x PERIODIC=NO
+_t3_3: TORSION ATOMS=135,133,139,136
+t3_3: MATHEVAL ARG=_t3_3 FUNC=(-1)*x PERIODIC=NO
+_t4_3: TORSION ATOMS=129,127,133,130
+t4_3: MATHEVAL ARG=_t4_3 FUNC=(-1)*x PERIODIC=NO
+_t5_3: TORSION ATOMS=111,109,115,112
+t5_3: MATHEVAL ARG=_t5_3 FUNC=(-1)*x PERIODIC=NO
+_t6_3: TORSION ATOMS=117,115,121,118
+t6_3: MATHEVAL ARG=_t6_3 FUNC=(-1)*x PERIODIC=NO
+
+th1: CUSTOM ...
+
+	ARG=t1_0,t1_1,t1_2,t1_3
+	VAR=t1_0,t1_1,t1_2,t1_3
+	FUNC=(t1_0+t1_1+t1_2+t1_3)/4
+	PERIODIC=NO
+...
+
+th2: CUSTOM ...
+
+	ARG=t2_0,t2_1,t2_2,t2_3
+	VAR=t2_0,t2_1,t2_2,t2_3
+	FUNC=(t2_0+t2_1+t2_2+t2_3)/4
+	PERIODIC=NO
+...
+
+th3: CUSTOM ...
+
+	ARG=t3_0,t3_1,t3_2,t3_3
+	VAR=t3_0,t3_1,t3_2,t3_3
+	FUNC=(t3_0+t3_1+t3_2+t3_3)/4
+	PERIODIC=NO
+...
+
+th4: CUSTOM ...
+
+	ARG=t4_0,t4_1,t4_2,t4_3
+	VAR=t4_0,t4_1,t4_2,t4_3
+	FUNC=(t4_0+t4_1+t4_2+t4_3)/4
+	PERIODIC=NO
+...
+
+th5: CUSTOM ...
+
+	ARG=t5_0,t5_1,t5_2,t5_3
+	VAR=t5_0,t5_1,t5_2,t5_3
+	FUNC=(t5_0+t5_1+t5_2+t5_3)/4
+	PERIODIC=NO
+...
+
+th6: CUSTOM ...
+
+	ARG=t6_0,t6_1,t6_2,t6_3
+	VAR=t6_0,t6_1,t6_2,t6_3
+	FUNC=(t6_0+t6_1+t6_2+t6_3)/4
+	PERIODIC=NO
+...
+
+cos_01: CUSTOM ...
+
+        ARG=t1_0
+        VAR=t1_0
+        FUNC=cos(t1_0-1.2)
+        PERIODIC=NO
+...
+
+cos_02: CUSTOM ...
+
+        ARG=t2_0
+        VAR=t2_0
+        FUNC=cos(t2_0-1.2)
+        PERIODIC=NO
+...
+
+cos_03: CUSTOM ...
+
+        ARG=t3_0
+        VAR=t3_0
+        FUNC=cos(t3_0-1.2)
+        PERIODIC=NO
+...
+
+cos_04: CUSTOM ...
+
+        ARG=t4_0
+        VAR=t4_0
+        FUNC=cos(t4_0-1.2)
+        PERIODIC=NO
+...
+
+cos_05: CUSTOM ...
+
+        ARG=t5_0
+        VAR=t5_0
+        FUNC=cos(t5_0-1.2)
+        PERIODIC=NO
+...
+
+cos_06: CUSTOM ...
+
+        ARG=t6_0
+        VAR=t6_0
+        FUNC=cos(t6_0-1.2)
+        PERIODIC=NO
+...
+
+cos_11: CUSTOM ...
+
+        ARG=t1_1
+        VAR=t1_1
+        FUNC=cos(t1_1-1.2)
+        PERIODIC=NO
+...
+
+cos_12: CUSTOM ...
+
+        ARG=t2_1
+        VAR=t2_1
+        FUNC=cos(t2_1-1.2)
+        PERIODIC=NO
+...
+
+cos_13: CUSTOM ...
+
+        ARG=t3_1
+        VAR=t3_1
+        FUNC=cos(t3_1-1.2)
+        PERIODIC=NO
+...
+
+cos_14: CUSTOM ...
+
+        ARG=t4_1
+        VAR=t4_1
+        FUNC=cos(t4_1-1.2)
+        PERIODIC=NO
+...
+
+cos_15: CUSTOM ...
+
+        ARG=t5_1
+        VAR=t5_1
+        FUNC=cos(t5_1-1.2)
+        PERIODIC=NO
+...
+
+cos_16: CUSTOM ...
+
+        ARG=t6_1
+        VAR=t6_1
+        FUNC=cos(t6_1-1.2)
+        PERIODIC=NO
+...
+
+cos_21: CUSTOM ...
+
+        ARG=t1_2
+        VAR=t1_2
+        FUNC=cos(t1_2-1.2)
+        PERIODIC=NO
+...
+
+cos_22: CUSTOM ...
+
+        ARG=t2_2
+        VAR=t2_2
+        FUNC=cos(t2_2-1.2)
+        PERIODIC=NO
+...
+
+cos_23: CUSTOM ...
+
+        ARG=t3_2
+        VAR=t3_2
+        FUNC=cos(t3_2-1.2)
+        PERIODIC=NO
+...
+
+cos_24: CUSTOM ...
+
+        ARG=t4_2
+        VAR=t4_2
+        FUNC=cos(t4_2-1.2)
+        PERIODIC=NO
+...
+
+cos_25: CUSTOM ...
+
+        ARG=t5_2
+        VAR=t5_2
+        FUNC=cos(t5_2-1.2)
+        PERIODIC=NO
+...
+
+cos_26: CUSTOM ...
+
+        ARG=t6_2
+        VAR=t6_2
+        FUNC=cos(t6_2-1.2)
+        PERIODIC=NO
+...
+
+cos_31: CUSTOM ...
+
+        ARG=t1_3
+        VAR=t1_3
+        FUNC=cos(t1_3-1.2)
+        PERIODIC=NO
+...
+
+cos_32: CUSTOM ...
+
+        ARG=t2_3
+        VAR=t2_3
+        FUNC=cos(t2_3-1.2)
+        PERIODIC=NO
+...
+
+cos_33: CUSTOM ...
+
+        ARG=t3_3
+        VAR=t3_3
+        FUNC=cos(t3_3-1.2)
+        PERIODIC=NO
+...
+
+cos_34: CUSTOM ...
+
+        ARG=t4_3
+        VAR=t4_3
+        FUNC=cos(t4_3-1.2)
+        PERIODIC=NO
+...
+
+cos_35: CUSTOM ...
+
+        ARG=t5_3
+        VAR=t5_3
+        FUNC=cos(t5_3-1.2)
+        PERIODIC=NO
+...
+
+cos_36: CUSTOM ...
+
+        ARG=t6_3
+        VAR=t6_3
+        FUNC=cos(t6_3-1.2)
+        PERIODIC=NO
+...
+
+cos1: CUSTOM ...
+
+        ARG=cos_01,cos_11,cos_21,cos_31
+        VAR=cos_01,cos_11,cos_21,cos_31
+        FUNC=(cos_01+cos_11+cos_21+cos_31)/4
+        PERIODIC=NO
+...
+
+cos2: CUSTOM ...
+
+        ARG=cos_02,cos_12,cos_22,cos_32
+        VAR=cos_02,cos_12,cos_22,cos_32
+        FUNC=(cos_02+cos_12+cos_22+cos_32)/4
+        PERIODIC=NO
+...
+
+cos3: CUSTOM ...
+
+        ARG=cos_03,cos_13,cos_23,cos_33
+        VAR=cos_03,cos_13,cos_23,cos_33
+        FUNC=(cos_03+cos_13+cos_23+cos_33)/4
+        PERIODIC=NO
+...
+
+cos4: CUSTOM ...
+
+	ARG=cos_04,cos_14,cos_24,cos_34
+        VAR=cos_04,cos_14,cos_24,cos_34
+        FUNC=(cos_04+cos_14+cos_24+cos_34)/4
+        PERIODIC=NO
+...
+
+cos5: CUSTOM ...
+
+        ARG=cos_05,cos_15,cos_25,cos_35
+        VAR=cos_05,cos_15,cos_25,cos_35
+        FUNC=(cos_05+cos_15+cos_25+cos_35)/4
+        PERIODIC=NO
+...
+
+cos6: CUSTOM ...
+
+        ARG=cos_06,cos_16,cos_26,cos_36
+        VAR=cos_06,cos_16,cos_26,cos_36
+        FUNC=(cos_06+cos_16+cos_26+cos_36)/4
+        PERIODIC=NO
+...
+
+CV_cosines_0: CUSTOM ...
+
+        ARG=cos_01,cos_02,cos_03,cos_04,cos_05,cos_06
+        VAR=cos_01,cos_02,cos_03,cos_04,cos_05,cos_06
+        FUNC=-0.4342*cos_01-0.8641*cos_04+0.2546*cos_06
+        PERIODIC=NO
+...
+
+CV_cosines_1: CUSTOM ...
+
+        ARG=cos_11,cos_12,cos_13,cos_14,cos_15,cos_16
+        VAR=cos_11,cos_12,cos_13,cos_14,cos_15,cos_16
+        FUNC=-0.4342*cos_11-0.8641*cos_14+0.2546*cos_16
+        PERIODIC=NO
+...
+
+CV_cosines_2: CUSTOM ...
+
+        ARG=cos_21,cos_22,cos_23,cos_24,cos_25,cos_26
+        VAR=cos_21,cos_22,cos_23,cos_24,cos_25,cos_26
+        FUNC=-0.4342*cos_21-0.8641*cos_24+0.2546*cos_26
+        PERIODIC=NO
+...
+
+CV_cosines_3: CUSTOM ...
+
+        ARG=cos_31,cos_32,cos_33,cos_34,cos_35,cos_36
+        VAR=cos_31,cos_32,cos_33,cos_34,cos_35,cos_36
+        FUNC=-0.4342*cos_31-0.8641*cos_34+0.2546*cos_36
+        PERIODIC=NO
+...
+
+CV_cosines: CUSTOM ...
+
+        ARG=CV_cosines_0,CV_cosines_1,CV_cosines_2,CV_cosines_3
+        VAR=CV_cosines_0,CV_cosines_1,CV_cosines_2,CV_cosines_3
+        FUNC=(CV_cosines_0+CV_cosines_1+CV_cosines_2+CV_cosines_3)/4
+        PERIODIC=NO
+...
+
+CV2_cosines_0: CUSTOM ...
+
+        ARG=cos_01,cos_02,cos_03,cos_04,cos_05,cos_06
+        VAR=cos_01,cos_02,cos_03,cos_04,cos_05,cos_06
+        FUNC=-0.822*cos_01+0.565*cos_04-0.0074*cos_06
+        PERIODIC=NO
+...
+
+CV2_cosines_1: CUSTOM ...
+
+        ARG=cos_11,cos_12,cos_13,cos_14,cos_15,cos_16
+        VAR=cos_11,cos_12,cos_13,cos_14,cos_15,cos_16
+        FUNC=-0.822*cos_11+0.565*cos_14-0.0074*cos_16
+        PERIODIC=NO
+...
+
+CV2_cosines_2: CUSTOM ...
+
+        ARG=cos_21,cos_22,cos_23,cos_24,cos_25,cos_26
+        VAR=cos_21,cos_22,cos_23,cos_24,cos_25,cos_26
+        FUNC=-0.822*cos_21+0.565*cos_24-0.0074*cos_26
+        PERIODIC=NO
+...
+
+CV2_cosines_3: CUSTOM ...
+
+        ARG=cos_31,cos_32,cos_33,cos_34,cos_35,cos_36
+        VAR=cos_31,cos_32,cos_33,cos_34,cos_35,cos_36
+        FUNC=-0.822*cos_31+0.565*cos_34-0.0074*cos_36
+        PERIODIC=NO
+...
+
+CV2_cosines: CUSTOM ...
+
+        ARG=CV2_cosines_0,CV2_cosines_1,CV2_cosines_2,CV2_cosines_3
+        VAR=CV_cosines_0,CV_cosines_1,CV_cosines_2,CV_cosines_3
+        FUNC=(CV_cosines_0+CV_cosines_1+CV_cosines_2+CV_cosines_3)/4
+        PERIODIC=NO
+...
+
+cell: CELL
+
+a: CUSTOM ...
+
+        ARG=cell.ax,cell.ay,cell.az
+        VAR=ax,ay,az
+        FUNC=sqrt(ax*ax+ay*ay+az*az)
+        PERIODIC=NO
+...
+
+b: CUSTOM ...
+
+        ARG=cell.bx,cell.by,cell.bz
+        VAR=bx,by,bz
+        FUNC=sqrt(bx*bx+by*by+bz*bz)
+        PERIODIC=NO
+...
+
+c: CUSTOM ...
+
+        ARG=cell.cx,cell.cy,cell.cz
+        VAR=cx,cy,cz
+        FUNC=sqrt(cx*cx+cy*cy+cz*cz)
+        PERIODIC=NO
+...
+
+alpha: CUSTOM ...
+
+   ARG=cell.bx,cell.by,cell.bz,cell.cx,cell.cy,cell.cz
+   VAR=ax,ay,az,bx,by,bz
+   FUNC=acos((ax*bx+ay*by+az*bz)/sqrt((ax*ax+ay*ay+az*az)*(bx*bx+by*by+bz*bz)))
+   PERIODIC=NO
+...
+
+beta: CUSTOM ...
+
+   ARG=cell.ax,cell.ay,cell.az,cell.cx,cell.cy,cell.cz
+   VAR=ax,ay,az,bx,by,bz
+   FUNC=acos((ax*bx+ay*by+az*bz)/sqrt((ax*ax+ay*ay+az*az)*(bx*bx+by*by+bz*bz)))
+   PERIODIC=NO
+...
+
+gamma: CUSTOM ...
+
+   ARG=cell.ax,cell.ay,cell.az,cell.bx,cell.by,cell.bz
+   VAR=ax,ay,az,bx,by,bz
+   FUNC=acos((ax*bx+ay*by+az*bz)/sqrt((ax*ax+ay*ay+az*az)*(bx*bx+by*by+bz*bz)))
+   PERIODIC=NO
+...
+
+# restraint: RESTRAINT ARG=t2_0,t3_0,t5_0,t2_1,t3_1,t5_1,t2_2,t3_2,t5_2,t2_3,t3_3,t5_3 AT=0.356276,-0.324913,0.426662,0.356276,-0.324913,0.426662,0.356276,-0.324913,0.426662,0.356276,-0.324913,0.426662 KAPPA=35,35,35,35,35,35,35,35,35,35,35,35
+
+uwall: UPPER_WALLS ARG=t2_0,t3_0,t5_0,t2_1,t3_1,t5_1,t2_2,t3_2,t5_2,t2_3,t3_3,t5_3 AT=0.38,-0.26,0.445,0.38,-0.26,0.445,0.38,-0.26,0.445,0.38,-0.26,0.445 KAPPA=35,35,35,35,35,35,35,35,35,35,35,35
+lwall: LOWER_WALLS ARG=t2_0,t3_0,t5_0,t2_1,t3_1,t5_1,t2_2,t3_2,t5_2,t2_3,t3_3,t5_3 AT=0.27,-0.515,0.36,0.27,-0.515,0.36,0.27,-0.515,0.36,0.27,-0.515,0.36 KAPPA=35,35,35,35,35,35,35,35,35,35,35,35
+
+metad: METAD ARG=CV_cosines,CV2_cosines ...
+   PACE=100 HEIGHT=0.2 BIASFACTOR=25
+   SIGMA=0.08,0.13
+   TEMP=300
+   CALC_RCT
+   FILE=HILLS GRID_MIN=-pi,-pi GRID_MAX=pi,pi
+...
+
+PRINT ARG=a,b,c,alpha,beta,gamma,CV_cosines,CV2_cosines,cos1,cos2,cos3,cos4,cos5,cos6,metad.*,lwall.*,uwall.* FILE=COLVAR_eps_packed_WT_300 STRIDE=1000
