@@ -2,7 +2,7 @@
 
 ##Oren Elishav, Roy Podgaetsky, Olga Meikler, and Barak Hirshberg
 
-[![arXiv]http://img.shields.io/badge/arXiv-	arXiv:2211.07746.svg)](https://arxiv.org/abs/2211.07746)
+[![arXiv](http://img.shields.io/badge/arXiv-	arXiv:2211.07746.svg)](https://arxiv.org/abs/2211.07746)
 
 This repository contains the input files for the paper "Collective Variables for Conformational Polymorphism in Molecular Crystals."
 
